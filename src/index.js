@@ -1,23 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-class HelloMessage extends React.Component {
+import data from "json!../data/forum.json";
+
+class Forum extends React.Component {
     render() {
-        let index = 0;
+        console.log(this.props.topics);
         return (
-            <h1>
-                {
-                    this.props.greetings.map(greeting => {
-                        return <span key={`greeting${index++}`}>{greeting} {this.props.who}!<br /></span>;
-                    })
-                }
-            </h1>
+            <div>
+                {/* TODO: render forum contents here */}
+            </div>
         );
     }
 }
 
-ReactDOM.render(<HelloMessage who="everybody" greetings={[
-    "Hello",
-    "Hallöchen",
-    "Ciao"
-]}/>, document.getElementById("main"));
+ReactDOM.render(<Forum topics={data.topics} />, document.getElementById("main"));
