@@ -6,9 +6,16 @@ import data from "json!../data/forum.json";
 class Forum extends React.Component {
     render() {
         console.log(this.props.topics);
+        let topicIndex = 0;
         return (
             <div>
-                {/* TODO: render forum contents here */}
+                {this.props.topics.map(topic => {
+                    return (
+                        <article key={`topic${topicIndex++}`}>
+                            <h1>{topic.subject}</h1>
+                        </article>
+                    );
+                })}
             </div>
         );
     }
