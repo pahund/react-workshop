@@ -14,14 +14,14 @@ class Topic extends React.Component {
         if (this.state.expanded) {
             return (
                 <article className={styles.topic}>
-                    <h1>{this.props.subject}</h1>
+                    <h1 onClick={() => this.setState({ expanded: false })}>{this.props.subject}</h1>
                     {this.props.children}
                 </article>
             );
         }
         return (
             <article className={styles.topic}>
-                <h1>{this.props.subject}</h1>
+                <h1 onClick={() => this.setState({ expanded: true })}>{this.props.subject}</h1>
             </article>
         );
     }
