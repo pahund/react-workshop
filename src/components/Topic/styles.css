@@ -1,0 +1,16 @@
+.topic {
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(to bottom, rgba(206,225,216,1) 0%,rgba(206,225,216,0) 100%);
+}
+
+.topic:last-child {
+    margin-bottom: 0;
+}
+
+.topic h1 {
+    color: #29074e;
+    font-size: 1.2rem;
+    margin: 0 0 20px 0;
+}
