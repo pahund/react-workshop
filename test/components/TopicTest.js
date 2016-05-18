@@ -12,4 +12,10 @@ describe("<Topic>", () => {
         const topic = shallow(<Topic />);
         topic.should.have.tagName("article");
     });
+    it("shows its children when clicked", () => {
+        const topic = shallow(<Topic subject="foo"><p>bar</p></Topic>);
+        topic.should.not.contain(<p>bar</p>)
+        topic.find("h1").simulate("click");
+        topic.should.contain(<p>bar</p>)
+    })
 });
