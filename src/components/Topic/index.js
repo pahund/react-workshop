@@ -11,10 +11,17 @@ class Topic extends React.Component {
     }
 
     render() {
+        if (this.state.expanded) {
+            return (
+                <article className={styles.topic}>
+                    <h1>{this.props.subject}</h1>
+                    {this.props.children}
+                </article>
+            );
+        }
         return (
             <article className={styles.topic}>
                 <h1>{this.props.subject}</h1>
-                {this.props.children}
             </article>
         );
     }
