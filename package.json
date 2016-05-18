@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --compilers js:test/setup.js,js:node_modules/babel-register test/**/*Test.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,8 +17,10 @@
     "chai-enzyme": "^0.4.2",
     "cheerio": "^0.20.0",
     "css-loader": "^0.23.1",
+    "css-modules-require-hook": "^4.0.0",
     "enzyme": "^2.3.0",
     "json-loader": "^0.5.4",
+    "react-addons-test-utils": "^15.0.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.0"
   },
