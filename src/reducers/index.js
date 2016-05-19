@@ -1,10 +1,9 @@
 function handleTopicClicked(state, id) {
-    console.log("[PH_LOG] state: ", state); // PH_TODO: REMOVE
-    const nextState = Object.assign({}, state, { topics: state.topics.map(topic => Object.assign({}, topic, {
-        expanded: topic.id === id
-    }))});
-    console.log("[PH_LOG] nextState: ", nextState); // PH_TODO: REMOVE
-    return nextState;
+    return Object.assign({}, state, {
+        topics: state.topics.map(topic => Object.assign({}, topic, {
+            expanded: topic.id === id
+        }))
+    });
 }
 
 export default (state, action) => {
