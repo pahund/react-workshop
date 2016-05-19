@@ -2,8 +2,10 @@ import React from "react";
 import Post from "../components/Post";
 import Topic from "../components/Topic";
 import User from "../components/User";
+import CommentForm from "../components/CommentForm";
 import { connect } from "react-redux";
 import topicClicked from "../actions/topicClicked";
+import commendPosted from "../actions/commentPosted";
 
 class App extends React.Component {
     render() {
@@ -23,6 +25,8 @@ class App extends React.Component {
                                     </Post>
                                 );
                             })}
+                            <CommentForm onSubmitClicked={comment =>
+                                this.props.dispatch(commendPosted(comment, "borat666", 8012))} />
                         </Topic>
                     );
                 })}
