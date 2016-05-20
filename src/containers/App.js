@@ -14,7 +14,8 @@ class App extends React.Component {
                 {this.props.topics.map(topic => {
                     return (
                         <Topic subject={topic.subject} key={`topic${topicIndex++}`}
-                               onTopicClicked={() => this.props.dispatch(topicClicked(topic.id))}>
+                               onTopicClicked={() => this.props.dispatch(topicClicked(topic.id))}
+                               expanded={topic.expanded}>
                             {topic.posts.map(post => {
                                 return (
                                     <Post message={post.message} key={`post${postIndex++}`}>

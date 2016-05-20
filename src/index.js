@@ -15,7 +15,7 @@ const store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-        <App topics={data.topics} />
+        <App />
     </Provider>,
     document.getElementById("main")
 );
