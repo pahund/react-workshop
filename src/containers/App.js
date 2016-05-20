@@ -26,7 +26,7 @@ class App extends React.Component {
                                 );
                             })}
                             <CommentForm onSubmitClicked={comment =>
-                                this.props.dispatch(commendPosted(comment, "borat666", 8012))} />
+                                this.props.dispatch(commendPosted(topic.id, comment, "borat666", 8012))} />
                         </Topic>
                     );
                 })}

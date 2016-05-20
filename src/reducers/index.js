@@ -6,13 +6,21 @@ function handleTopicClicked(state, id) {
     });
 }
 
+function handleTopicsUpdated(state, newTopics) {
+    const topics = state.topics.map((topic, topicIndex) => {
+        const posts = newTopics[topicIndex].posts;
+        return Object.assign({}, topic, { posts });
+    });
+    return Object.assign({}, state, { topics });
+}
+
 export default (state, action) => {
+    console.log("reducer received action:", action.type);
     switch (action.type) {
         case "TOPIC_CLICKED":
             return handleTopicClicked(state, action.id);
-        case "COMMENT_POSTED":
-            console.log("comment posted:", action.message);
-            return state;
+        case "TOPICS_UPDATED":
+            return handleTopicsUpdated(state, action.topics);
         default:
     }
     return state;
