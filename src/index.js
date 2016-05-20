@@ -6,7 +6,7 @@ import { createStore, applyMiddleware } from "redux";
 import rootReducer from "./reducers";
 import axios from "axios";
 import createSagaMiddleware from "redux-saga";
-
+import postComment from "./sagas/postComment";
 
 axios.get("http://localhost:8080/api/topics").then(response => {
     const topics = response.data;
